@@ -7,7 +7,8 @@ import hashlib
 def grab_input():
     print("test/123 for control")
     word    = input("word>") #remove hardcoded values
-    num     = str(input("number>")) #str(input("number>")) gives different output   
+    num     = str(input("number>")) #str(input("number>")) gives different output
+
     #file    = input("filename[.extention]") #add save function
     return word, num
 
@@ -16,20 +17,38 @@ def make_save_file():
 
 def make_output():
     word, num   = grab_input()
-    return make_md5(word + num)
+    combos      = make_combos(word, num)
+    combos_md5  = make_md5(combos)
+    for x, y in zip(combos, combos_md5):
+        print(x+":"+y)
+
+    #return make_md5(combos)
+
+    
 
 def make_combos(word, num):
     combo1  = word+num
+    combo2  = word.upper()+num
+    combo3  = word.lower()+num
+    combo4  = word.capitalize()+num
 
-def make_md5(x):
-    return hashlib.md5(x.encode()).hexdigest()
+    list    = [combo1,combo2,combo3,combo4]
 
+    return list
+
+def make_md5(plain_list):
+    hash_list    =[]
+    for item in plain_list:
+        hash_list.append(hashlib.md5(item.encode()).hexdigest())
+    #return plain_list #fixme - test
+    return hash_list
 
 
 def main_fun():
     #calls all functions
     print(make_output())
-    print(hashlib.md5("test123".encode()).hexdigest() + " --> control")
+    control_text = "test123"
+    print(control_text+":"+hashlib.md5(control_text.encode()).hexdigest() + " --> control")
     
     
 
