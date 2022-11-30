@@ -1,8 +1,10 @@
 #word+number hellberg-hashgenerator
 #copy-left Rebekah Hellberg, @cyberSecHell hellmak.com
 
-#fixme: add year from - year to function :)
-#written in ~120min :D
+#to-do:
+    #add year functionality
+    #add export functionality
+    #add more hash methods
 
 import hashlib
 
