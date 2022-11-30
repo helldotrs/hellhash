@@ -1,6 +1,8 @@
 #word+number hellberg-hashgenerator
 #copy-left Rebekah Hellberg, @cyberSecHell hellmak.com
 
+#fixme: add year from - year to function :)
+
 import hashlib
 
 
