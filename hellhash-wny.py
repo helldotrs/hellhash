@@ -9,8 +9,20 @@ import hashlib
 
 def grab_input():
     print("test/123 for control")
-    word    = input("word>") #remove hardcoded values
-    num     = str(input("number>")) #str(input("number>")) gives different output
+
+    select  = input("[N]umber or [Y]ear (only use N for now)>>")
+    
+    if(select=="n"):
+        num         = input("number>>") 
+        num         = str(num)
+    elif(select=="y"):
+        year_first  = input("first year>>")
+        year_last   = input("last year>>")
+        num         = str(year_first)
+    else:
+        print(":(")
+        exit()
+    word    = input("word>>") #remove hardcoded values
 
     #file    = input("filename[.extention]") #add save function
     return word, num
