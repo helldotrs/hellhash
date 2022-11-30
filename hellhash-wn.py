@@ -2,6 +2,7 @@
 #copy-left Rebekah Hellberg, @cyberSecHell hellmak.com
 
 #fixme: add year from - year to function :)
+#written in ~120min :D
 
 import hashlib
 
